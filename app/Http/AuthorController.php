@@ -19,6 +19,7 @@ class AuthorController extends Controller
      * @var AuthorService
      */
     public $authorService;
+
     /**
      * Create a new controller instance.
      *
@@ -36,7 +37,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-
+        return $this->successResponse($this->authorService->obtainAuthors());
     }
 
     /**

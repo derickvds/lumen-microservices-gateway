@@ -27,12 +27,6 @@ $app->withFacades();
 
 $app->withEloquent();
 
-/**
- * Register config files
- */
-
-$app->configure('services');
-
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -66,7 +60,7 @@ $app->singleton(
 */
 
 $app->configure('app');
-
+$app->configure('services');
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
