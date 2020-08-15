@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Book;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use App\Services\BookService;
+use Illuminate\Http\Response;
+use App\Services\AuthorService;
 
 class BookController extends Controller
 {
@@ -32,7 +33,7 @@ class BookController extends Controller
      *
      * @return void
      */
-    public function __construct(BookService $bookService, AutherService $authorService)
+    public function __construct(BookService $bookService, AuthorService $authorService)
     {
         $this->bookService = $bookService;
         $this->authorService = $authorService;
