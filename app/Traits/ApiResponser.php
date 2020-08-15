@@ -25,7 +25,7 @@ trait ApiResponser
      * @param int $code
      * @return Illuminate\Http\JsonResponse
      */
-    public function errorResponse($message, $code = Response::HTTP_OK)
+    public function errorResponse($message, $code)
     {
         return response()->json(['error' => $message, 'code' => $code], $code);
     }
@@ -37,8 +37,8 @@ trait ApiResponser
      * @param int $code
      * @return Illuminate\Http\JsonResponse
      */
-    public function errorMessage($message, $code = Response::HTTP_OK)
+    public function errorMessage($message, $code)
     {
-        return response($data, $code)->header('Content-Type', 'application/json');
+        return response($message, $code)->header('Content-Type', 'application/json');
     }
 }
